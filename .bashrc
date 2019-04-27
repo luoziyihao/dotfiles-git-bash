@@ -1,4 +1,4 @@
-# oh-my-git-bash 
+# oh-my-git-bash. which can be found in github
 . ~/app/oh-my-git-bash/start.sh
 
 # tmux. which can be found in github
