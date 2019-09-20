@@ -6,3 +6,7 @@ export PATH=/usr/local/share/tmux/tmux/bin:/usr/local/share/tmux/tools:${PATH}
 
 # alias local
 . ~/dotfiles-git-bash/.alias.local.sh
+
+# other config
+# editor model . use vi
+set -o vi
