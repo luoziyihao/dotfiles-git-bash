@@ -5,4 +5,4 @@
 export PATH=/usr/local/share/tmux/tmux/bin:/usr/local/share/tmux/tools:${PATH}
 
 # alias local
-. ~/.alias.local.sh
+. ~/dotfiles-git-bash/.alias.local.sh
