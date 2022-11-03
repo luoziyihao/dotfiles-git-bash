@@ -33,72 +33,71 @@ set ambiwidth=double
 " no vi-compatible
 set nocompatible
 
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+" Setting up Vundle - the vim plugin Pluginr
+let vundle_readme=expand('~/.vim/Plugin/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle..."
     echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !mkdir -p ~/.vim/Plugin
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/Plugin/Vundle.vim
     let iCanHazVundle=0
 endif
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/Plugin/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " ============================================================================
 " Active plugins
 " You can disable or add new ones here:
 
 " file browser
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "auto_pairs
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 "markdown
-Bundle 'iamcco/markdown-preview.vim'
+Plugin 'iamcco/markdown-preview.vim'
 "luoziyihao/my_fisa
-Bundle 'luoziyihao/my_fisa'
-Bundle 'wombat256.vim'
+Plugin 'luoziyihao/my_fisa'
+Plugin 'wombat256.vim'
 "altercation/vim-colors-solarized
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 "Valloric/YouCompleteMe
-"Bundle 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Shougo/neocomplete.vim
-"Bundle 'Shougo/neocomplete.vim'
+"Plugin 'Shougo/neocomplete.vim'
 "Tagbar
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 "ariline
-"Bundle 'bling/vim-airline'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
+"Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "nerdcommenter
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 "git-vim , run git cmd
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 "vim-gitgutter, realtime view the change in diff
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 "Shougo/unite.vim
-Bundle 'Shougo/unite.vim'
+Plugin 'Shougo/unite.vim'
 " Python and other languages code checker
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " markdown colorscheme
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
-call vundle#end()            " required
+call vundle#end()               " required
 filetype plugin indent on    " required
 
 " ==========================install plugin==================================================
 " Install plugins the first time vim runs
 if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
+    echo "Installing Plugins, please ignore key map error messages"
     echo ""
-    :BundleInstall
+    :PluginInstall
 endif
 " ==========================install plugin==================================================
 
@@ -110,11 +109,11 @@ let mapleader=','
 syntax on 
 "打开关键字上色。进行程序设计的朋友应该都知道关键字上色是什么东西,因此这里就不多说了。不进行程序设计的朋友不妨也打开这个功能,虽然不一定能够用得着,但这个功能其"实也是很好玩的。
 
-let color_readme=expand('~/.vim/bundle/vim-colors-solarized/README.mkd')
+let color_readme=expand('~/.vim/Plugin/vim-colors-solarized/README.mkd')
 if !filereadable(color_readme)
     echo "Installing vim-colors-solarized ..."
     echo ""
-    silent !git clone https://github.com/altercation/vim-colors-solarized ~/.vim/bundle/vim-colors-solarized
+    silent !git clone https://github.com/altercation/vim-colors-solarized ~/.vim/Plugin/vim-colors-solarized
     let iCanHazVundle=0
 endif
 
@@ -130,6 +129,7 @@ endif
 
 " colors for gvim
 if has('gui_running')
+    " 设置字体大小
     " colorscheme wombat256
 endif
 " ============================pre plugin cfg================================================
