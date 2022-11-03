@@ -34,6 +34,7 @@ set ambiwidth=double
 set nocompatible
 
 " Setting up Vundle - the vim plugin Pluginr
+let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/Plugin/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle..."
