@@ -62,15 +62,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 "markdown
 Plugin 'iamcco/markdown-preview.vim'
-"luoziyihao/my_fisa
-Plugin 'luoziyihao/my_fisa'
 Plugin 'wombat256.vim'
-"altercation/vim-colors-solarized
 Plugin 'altercation/vim-colors-solarized'
 "Valloric/YouCompleteMe
 "Plugin 'Valloric/YouCompleteMe'
 "Shougo/neocomplete.vim
-"Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 "Tagbar
 Plugin 'majutsushi/tagbar'
 "ariline
@@ -88,7 +85,7 @@ Plugin 'Shougo/unite.vim'
 " Python and other languages code checker
 Plugin 'scrooloose/syntastic'
 " markdown colorscheme
-Plugin 'tpope/vim-markdown'
+"Plugin 'tpope/vim-markdown'
 
 call vundle#end()               " required
 filetype plugin indent on    " required
@@ -106,9 +103,11 @@ endif
 "leader
 let mapleader=','
 "设置命令映射,按下映射,再按下其他定义的键位,就可以调用想调用的命令或者方法了
-"
+
+" colorscheme https://github.com/altercation/vim-colors-solarize
 syntax on 
-"打开关键字上色。进行程序设计的朋友应该都知道关键字上色是什么东西,因此这里就不多说了。不进行程序设计的朋友不妨也打开这个功能,虽然不一定能够用得着,但这个功能其"实也是很好玩的。
+colorscheme solarized 
+set background=dark
 
 let color_readme=expand('~/.vim/Plugin/vim-colors-solarized/README.mkd')
 if !filereadable(color_readme)
@@ -118,21 +117,6 @@ if !filereadable(color_readme)
     let iCanHazVundle=0
 endif
 
-" use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
-	let &t_Co = 256
-    " colorscheme fisa
-    "colorscheme solarized
-    "colorscheme molokai
-else
-    colorscheme delek
-endif
-
-" colors for gvim
-if has('gui_running')
-    " 设置字体大小
-    " colorscheme wombat256
-endif
 " ============================pre plugin cfg================================================
 
 "*********************************************插件配置*****************************************
@@ -209,13 +193,6 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "neocomplete------------------------------
 
-"solarized------------------------------
-" let g:solarized_termtrans = 1
-" colorscheme solarized
-" " togglebg#map("<F5>")
-" set background=light
-"solarized------------------------------
-"
 "syntastic------------------------------
 " need install rely 
 " sudo pip install dbgp vim-debug pep8 flake8 pyflakes isort
